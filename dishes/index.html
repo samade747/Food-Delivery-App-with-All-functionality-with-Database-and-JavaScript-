@@ -10,8 +10,10 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="#">
+            <img src="./images/Foodpanda-Logo.wine.png" width="150px" alt="">
+         </a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,11 +39,11 @@
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
               </li>
             </ul> -->
-            <form class="d-flex gap-2 me-2" role="search">
+            <div class="d-flex gap-2 me-2" >
               <!-- <input class="form-control " type="search" placeholder="Search" aria-label="Search"> -->
-              <button class="btn btn-outline-success" type="submit">Regster</button>
-              <button class="btn btn-outline-success" type="submit">Login</button>
-            </form>
+              <a href="../register.html"><button class="btn btn-outline-success" >Register</button></a>
+              <a href="../login.html"><button class="btn btn-outline-success" >Login</button></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -80,7 +82,11 @@
             <h5 class="card-title">Biryani</h5>
             <p class="card-text"></p>
             <p class="card-text"><small class="text-body-secondary">Serve 2 Persons</small></p>
-            <button class="btn btn-outline-primary">Order now</button>
+            <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">+</button>
+            <span class="btn btn-outline-primary" style="border: 1px solid black;">1</span>
+            <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">-</button>
+            <button class="btn btn-outline-primary">Add to Cart</button>
+            
           </div>
         </div>
       </div>
@@ -96,7 +102,10 @@
             <h5 class="card-title">Biryani</h5>
             <p class="card-text"></p>
             <p class="card-text"><small class="text-body-secondary">Serve 2 Persons</small></p>
-            <button class="btn btn-outline-primary">Order now</button>
+            <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">+</button>
+            <span class="btn btn-outline-primary" style="border: 1px solid black;">1</span>
+            <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">-</button>
+            <button class="btn btn-outline-primary">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -120,8 +129,11 @@
                 <h5 class="card-title">Biryani</h5>
                 <p class="card-text"> <i class="fa-solid fa-trash"></i> </p>
                 <p class="card-text"><small class="text-body-secondary">Serve 2 Persons</small></p>
+                <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">+</button>
+            <span class="btn btn-outline-primary" style="border: 1px solid black;">1</span>
+            <button class="btn btn-outline-primary" style="border-radius: 50%; border: 1px solid black;">-</button>
           
-          <button class="btn btn-outline-danger">Checkout</button>
+                <button class="btn btn-outline-danger">Checkout</button>
         </blockquote>
       </div>
     </div>
