@@ -2,24 +2,24 @@ import { signUp, login, addInDBById, getLoggedInUser, getData, updateData, uploa
 
 
 const email = document.getElementById('email')
-const inputPassword = document.getElementById('inputPassword')
+const Password = document.getElementById('password')
 const loginBtn = document.getElementById('loginBtn')
 
 
 const handleLogin = async (event) => {
     console.log('====> checking login User')
     event.preventDefault();    
-    console.log(email.value, inputPassword.value)
+    console.log(email.value, Password.value)
 
-    if(!email.value || !inputPassword.value){
+    if(!email.value || !Password.value){
         console.log("Please fill in all fields")
         return
-    } else if (inputPassword.value.length < 8) {
+    } else if (Password.value.length < 8) {
         console.log("Password should be at least 8 characters long!")
         return
     }
 
-    const logging = await login(email.value, inputPassword.value)
+    const logging = await login(email.value, Password.value)
     
     if(logging.status) {
         console.log(logging.message)
