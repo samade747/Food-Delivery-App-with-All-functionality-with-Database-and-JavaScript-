@@ -1,4 +1,4 @@
-import { signUp, login, addInDBById, getLoggedInUser, getData, updateData, uploadFile, getAllDataOrderedByTimestamp, logout, addInDB, deletData } from "../utilities/functions.mjs"; 
+import { signUp, login, addInDBById, getLoggedInUser, getData, updateData, uploadFile, getAllDataOrderedByTimestamp, logout, addInDB, deletData} from "../utilities/functions.mjs"; 
 
 
 const email = document.getElementById('email')
@@ -19,16 +19,20 @@ const handleLogin = async (event) => {
         return
     }
 
-    const logging = await login(email.value, Password.value)
-    
-    if(logging.status) {
-        console.log(logging.message)
-        window.location.href = '../home/index.html'
-    } else {
-        console.log(logging.message)
-        console.error('Firebase Authentication Error:', logging.code);
+    try {
+        const logging = await login(email.value, Password.value);
+        if (logging.status) {
+            console.log(logging.message);
+            window.location.href = "../dishes/index.html";
+        } else {
+            console.log(logging.message);
+            console.error('Firebase Authentication Error:', logging.code);
+        }
+    } catch (error) {
+        console.error('Firebase Authentication Error:', error);
     }
 }
+
 
 // const handleLogin = async (event) => {
 //     console.log('====> checking login User')
