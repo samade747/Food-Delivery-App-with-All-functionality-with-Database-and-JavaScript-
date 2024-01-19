@@ -1,11 +1,57 @@
-import { signUp, login, addInDBById, getLoggedInUser, getData, updateData, uploadFile, getAllDataOrderedByTimestamp, logout, addInDB, deletData } from "./utilities/functions.mjs"; 
+import { signUp, login, addInDBById, getLoggedInUser, getData, updateData, uploadFile, getAllDataOrderedByTimestamp, logout, addInDB, deletData } from "../utilities/functions.mjs"; 
 
+
+const email = document.getElementById('email')
+const inputPassword = document.getElementById('inputPassword')
 const loginBtn = document.getElementById('loginBtn')
 
-const login = () => {
+
+const handleLogin = async (event) => {
+    console.log('====> checking login User')
+    event.preventDefault();    
+    console.log(email.value, inputPassword.value)
+
+    if(!email.value || !inputPassword.value){
+        console.log("Please fill in all fields")
+        return
+    } else if (inputPassword.value.length < 8) {
+        console.log("Password should be at least 8 characters long!")
+        return
+    }
+
+    const logging = await login(email.value, inputPassword.value)
     
-
-
+    if(logging.status) {
+        console.log(logging.message)
+        window.location.href = '../home/index.html'
+    } else {
+        console.log(logging.message)
+        console.error('Firebase Authentication Error:', logging.code);
+    }
 }
 
-loginBtn && loginBtn.addEventListener('click', login)
+// const handleLogin = async (event) => {
+//     console.log('====> checking login User')
+//     event.preventDefault();    
+//     console.log(email.value, inputPassword.value)
+
+//     if(!email.value || !inputPassword){
+//         alert("pls fill all fields")
+//         return
+//     } else if (inputPassword.value.length < 8) {
+//         alert("Password should be at least 8 characters long!")
+//         return
+//     }
+        
+//     const logging = await login(email.value, inputPassword.value)
+//     if(logging.status) {
+//     alert(logging.message)
+//     window.location.href = '../home/index.html'
+//     } else {
+//         alert(logging.message)
+//         console.error('Firebase Authentication Error:', logging.error);
+//     }
+
+// }
+
+loginBtn.addEventListener('click', handleLogin)

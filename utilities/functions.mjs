@@ -20,11 +20,12 @@ const signUp = async (email, password) => {
 }
 
 // created login function through firebase auth
+// created login function through firebase auth
 const login = async (email, password) => {
     console.log("working login firebase handler", email, password)
     try {
-        //logging in user and calling firebase auth login function
-        const logging = await signInWithEmailAndPassword(auth, email, password)
+        // logging in user and calling firebase auth login function
+        const logging = await signInWithEmailAndPassword(auth, email, password);
         return {
             status: true,
             message: "User logged in successfully",
@@ -34,10 +35,29 @@ const login = async (email, password) => {
         return {
             status: false,
             message: error.message,
-            code: error.code
+            code: error.code // Include the error code in the response
         }
     }
 }
+
+// const login = async (email, password) => {
+//     console.log("working login firebase handler", email, password)
+//     try {
+//         //logging in user and calling firebase auth login function
+//         const logging = await signInWithEmailAndPassword(auth, email, password)
+//         return {
+//             status: true,
+//             message: "User logged in successfully",
+//             data: logging
+//         }
+//     } catch (error) {
+//         return {
+//             status: false,
+//             message: error.message,
+//             code: error.code
+//         }
+//     }
+// }
 
 // created logout function through firebase auth
 const logout = async () => {
